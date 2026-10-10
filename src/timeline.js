@@ -4,14 +4,14 @@ import * as THREE from 'three';
 // Keep the chapter order aligned with the transport's score progression.
 export const EVENTS = [
   { chapter: 'Origins', when: '2021', title: "St. Paul's School", detail: 'Udaipur · Class X, 95.8%.' },
-  { chapter: 'Origins', when: '2021–2023', title: 'MDS Public School', detail: 'Udaipur · Class XII, 92.4%.' },
+  { chapter: 'Origins', when: '2021-2023', title: 'MDS Public School', detail: 'Udaipur · Class XII, 92.4%.' },
   { chapter: 'Origins', when: '2023', title: 'IIT Roorkee', detail: 'Started a B.Tech. in Metallurgical & Materials Engineering.' },
-  { chapter: 'Design', when: '2023–2024', title: 'SPIC MACAY', detail: 'Worked across website UI, event visuals, newsletters and social creatives.' },
-  { chapter: 'Design', when: '2023–2026', title: 'MeTES', detail: 'Departmental website, posters, merchandise and event communication.' },
+  { chapter: 'Design', when: '2023-2024', title: 'SPIC MACAY', detail: 'Worked across website UI, event visuals, newsletters and social creatives.' },
+  { chapter: 'Design', when: '2023-2026', title: 'MeTES', detail: 'Departmental website, posters, merchandise and event communication.' },
   { chapter: 'Creative Tech', when: '2025', title: 'GTA-IITR', detail: 'Pitched a campus-exploration game and created Blender assets for Unity.' },
   { chapter: 'Creative Tech', when: '2025', title: 'Redemption VR', detail: 'Designed and prepared 3D assets for a zombie-survival VR experience.' },
   { chapter: 'Creative Tech', when: '2025', title: 'Shrishti', detail: 'The GTA-IITR / VR showcase received Best Presentation recognition.' },
-  { chapter: 'Products', when: '2025–2026', title: 'FlingBizz', detail: 'Built a React Native app from Figma designs; an early-stage product tested by a 100+ member community.' },
+  { chapter: 'Products', when: '2025-2026', title: 'FlingBizz', detail: 'Built a React Native app from Figma designs; an early-stage product tested by a 100+ member community.' },
   { chapter: 'Products', when: '2026', title: 'Campus Dashboard', detail: 'Built a campus event experience that grew beyond 1,000 unique visitors.' },
   { chapter: 'Products', when: '2026', title: 'Thomso tracker', detail: 'Added a 3D campus map, venue navigation, event planning and a crowd heatmap.' },
   { chapter: 'Products', when: '2026', title: 'NodeBoard', detail: 'Built a real-time collaborative diagram editor using React, TypeScript and WebSockets.' },

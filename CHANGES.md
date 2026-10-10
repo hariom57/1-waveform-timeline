@@ -1,25 +1,23 @@
 # Update summary
 
-## Updated files
+## This revision
 
-- `index.html`: stronger intro, main navigation, project / journey / about / contact sections, metadata, accessible case-study dialog shell.
-- `src/style.css`: redesigned responsive project grid and case studies, higher-contrast muted text, timeline label backing, mobile adjustments, reduced-motion and no-WebGL fallback styles.
-- `src/main.js`: connected section navigation to the waveform transport, refreshed layout measurement, added project initialization, audio availability guard, document-hidden render guard, and a static timeline fallback if WebGL construction fails.
-- `src/timeline.js`: replaced old biography-only milestones with product/design/creative-technology milestones and builds labels through DOM APIs.
-- `src/transport.js`: keeps the scrubbing waveform redraw tied to actual progress changes instead of redrawing every animation tick.
-- `src/sound.js`: added an availability check and section chord for the expanded navigation.
-- `src/projects.js` (new): six filterable project cards and structured case-study dialogs.
-- `README.md` (new): local setup and file map.
-- `CONTENT_GUIDE.md` (new): assets to collect and factual claims to check.
-- `.gitignore` (new): ignores dependency/build output.
+- Added a first-visit sound invitation with an explicit user gesture to enable the generative score and a clear silent option.
+- Fixed case-study scrolling by stopping Lenis while a native project dialog is open, keeping modal scrolling contained, restoring Lenis when closed, and styling scrollbars.
+- Made project cover and information surfaces interactive. Case-study content opens from the card body; a configured first project URL makes the cover image open that link in a new tab. Other project URLs appear below the card and inside the case study.
+- Added subtle pointer-driven 3D tilt and layered cover motion to project cards.
+- Added a lightweight glow and sparkle cursor trail for mouse/trackpad users, disabled for touch and reduced-motion preferences.
+- Removed em-dash and en-dash punctuation from the website source in favor of regular hyphens.
+- Removed the invented combined "AI/ML & voice systems" card and split the project grid into the actual individual resume projects: Campus Dashboard, FlingBizz, NodeBoard, GTA-IITR, Redemption IITR, Hercules Habit Warrior and TargetChase.
+- Added per-project link arrays with instructions for live pages, YouTube videos, Figma prototypes, GitHub repositories or social posts.
+- Improved secondary text contrast and retained the existing reduced-motion and no-WebGL fallbacks.
 
 ## Validation
 
-- All source JavaScript files pass `node --check` syntax validation.
-- HTML static checks found no duplicate static IDs or missing in-page anchor targets.
-- Verified the six project entries, thirteen timeline milestones and eight transport/audio sections are aligned in source.
-- A full Vite production build could not be run in this environment because `npm ci` stalled while fetching packages and the local package cache did not contain Vite. Run `npm install` followed by `npm run build` in a network-enabled environment before deployment.
+- JavaScript syntax checks pass for all source modules.
+- Static checks confirm seven separate project records and no remaining em-dash / en-dash punctuation in website source files.
+- A full Vite production build still needs to be run locally with dependencies installed (`npm install` then `npm run build`).
 
-## Known remaining content task
+## Asset note
 
-The project cards use authored inline SVG illustrations as covers so the page is complete without external assets. These are not actual project screenshots. Replace or supplement them with genuine product screenshots / Figma frames / recordings before treating the portfolio as final. The content guide identifies the highest-value captures and claims to verify.
+The covers are authored inline SVG illustrations, not screenshots of the actual products. Replace or supplement them with real screenshots, Figma frames or demo recordings before treating the portfolio as final.

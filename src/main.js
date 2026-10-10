@@ -6,6 +6,9 @@ import { createSound } from './sound.js';
 import { createTransport } from './transport.js';
 import { createTimeline, EVENTS } from './timeline.js';
 import { initProjects } from './projects.js';
+import { initCursorEffect } from './cursor.js';
+
+initCursorEffect();
 
 const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 let staticTimeline = reduced;
@@ -66,15 +69,54 @@ initProjects();
 const sound = createSound();
 const transport = createTransport({ tracks, onSeek: seek });
 const soundBtn = document.querySelector('.sound');
+const soundGate = document.querySelector('#sound-gate');
+const enterWithSound = document.querySelector('#enter-with-sound');
+const enterSilently = document.querySelector('#enter-silently');
+const soundGateStatus = document.querySelector('#sound-gate-status');
+
+function syncSoundButton() {
+  soundBtn.setAttribute('aria-pressed', String(sound.on));
+  soundBtn.textContent = sound.on ? 'Sound on' : 'Sound off';
+}
+
 if (!sound.available) {
   soundBtn.disabled = true;
   soundBtn.textContent = 'Sound unavailable';
   soundBtn.title = 'Web Audio is not available in this browser.';
+  enterWithSound.disabled = true;
+  soundGateStatus.textContent = 'This browser does not support Web Audio. You can still enter without sound.';
 }
+
+// A deliberate first-visit gate makes the generative soundtrack discoverable.
+// Audio is enabled only from the user's click, respecting browser autoplay policies.
+if (soundGate && !soundGate.open) soundGate.showModal();
+if (soundGate) {
+  document.body.classList.add('sound-gate-open');
+  if (lenis) lenis.stop();
+  soundGate.addEventListener('cancel', (event) => event.preventDefault());
+  enterWithSound.addEventListener('click', () => {
+    const on = sound.toggle();
+    syncSoundButton();
+    if (on) {
+      soundGate.close();
+    } else {
+      soundGateStatus.textContent = 'Sound could not start in this browser. Try again, or continue without sound.';
+    }
+  });
+  enterSilently.addEventListener('click', () => soundGate.close());
+  soundGate.addEventListener('close', () => {
+    document.body.classList.remove('sound-gate-open');
+    if (!document.body.classList.contains('dialog-open')) lenis?.start();
+    requestAnimationFrame(() => {
+      measure();
+      lenis?.resize();
+    });
+  });
+}
+
 soundBtn.addEventListener('click', () => {
-  const on = sound.toggle();
-  soundBtn.setAttribute('aria-pressed', String(on));
-  soundBtn.textContent = on ? 'Sound on' : 'Sound off';
+  sound.toggle();
+  syncSoundButton();
 });
 
 function measure() {
@@ -111,6 +153,17 @@ function measure() {
   starts[starts.length - 1] = Math.min(1, starts[starts.length - 1]);
   transport.layout(starts);
 }
+
+// Pause the smooth-scroll engine while a native project dialog is open. The
+// dialog then owns wheel and touch scrolling instead of the page behind it.
+window.addEventListener('portfolio:modal-open', () => lenis?.stop());
+window.addEventListener('portfolio:modal-close', () => {
+  if (!soundGate?.open) lenis?.start();
+  requestAnimationFrame(() => {
+    lenis?.resize();
+    measure();
+  });
+});
 
 /* ---------------- copy email ---------------- */
 document.querySelectorAll('[data-copy]').forEach((button) => {

@@ -4,11 +4,11 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="color-scheme" content="light" />
-  <title>Hari Om Sharma — Product-minded Engineer & Creative Technologist</title>
+  <title>Hari Om Sharma - Product-minded Engineer & Creative Technologist</title>
   <meta name="description" content="Hari Om Sharma is an IIT Roorkee engineer building user-facing products, interactive 3D experiences, and AI-enabled software." />
   <meta name="theme-color" content="#e6e5ee" />
   <meta property="og:type" content="website" />
-  <meta property="og:title" content="Hari Om Sharma — Product-minded Engineer & Creative Technologist" />
+  <meta property="og:title" content="Hari Om Sharma - Product-minded Engineer & Creative Technologist" />
   <meta property="og:description" content="Products, interaction design, creative technology, full-stack engineering and AI/ML." />
   <meta property="og:url" content="https://hari-om-sharma-portfolio.vercel.app/" />
   <meta name="twitter:card" content="summary" />
@@ -22,10 +22,20 @@
   <canvas class="stage" aria-hidden="true"></canvas>
   <div class="veil" aria-hidden="true"></div>
 
+  <dialog class="sound-gate" id="sound-gate" aria-labelledby="sound-gate-title" aria-describedby="sound-gate-copy">
+    <div class="sound-gate-mark" aria-hidden="true"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div>
+    <p class="eyebrow">A little heads-up</p>
+    <h2 id="sound-gate-title">This journey has a <em>soundtrack.</em></h2>
+    <p id="sound-gate-copy" class="sound-gate-copy">The waveform has its own generative score. Sound makes the experience feel more complete, so headphones are welcome.</p>
+    <button class="button button-dark sound-gate-enter" id="enter-with-sound" type="button" autofocus>Enter with sound <span aria-hidden="true">↗</span></button>
+    <button class="sound-gate-silent" id="enter-silently" type="button">Continue without sound</button>
+    <p class="sound-gate-status" id="sound-gate-status" aria-live="polite"></p>
+  </dialog>
+
   <header class="top">
     <a class="top-name" href="#intro" aria-label="Hari Om Sharma, home">Hari Om Sharma<span class="top-mark">®</span></a>
     <nav class="top-nav" aria-label="Main navigation">
-      <a href="#work">Work <span>06</span></a>
+      <a href="#work">Work <span>07</span></a>
       <a href="#journey">Journey</a>
       <a href="#about">About</a>
       <a href="#contact">Contact</a>
@@ -51,16 +61,16 @@
 
     <section class="work-section content-section" id="work" data-title="Selected work" aria-labelledby="work-title">
       <div class="section-head">
-        <p class="eyebrow">01 — Selected work</p>
+        <p class="eyebrow">01 - Selected work</p>
         <div class="section-title-row">
           <h2 id="work-title">Ideas made<br /><em>real.</em></h2>
           <p class="section-intro">A selection of products, experiments and creative experiences. I like working where user needs, visual craft and engineering meet.</p>
         </div>
       </div>
       <div class="filter-bar" role="group" aria-label="Filter projects">
-        <button class="filter-chip is-active" type="button" data-filter="all" aria-pressed="true">All work <span>06</span></button>
+        <button class="filter-chip is-active" type="button" data-filter="all" aria-pressed="true">All work <span>07</span></button>
         <button class="filter-chip" type="button" data-filter="product" aria-pressed="false">Product & UI</button>
-        <button class="filter-chip" type="button" data-filter="engineering" aria-pressed="false">Engineering / AI</button>
+        <button class="filter-chip" type="button" data-filter="engineering" aria-pressed="false">Software & systems</button>
         <button class="filter-chip" type="button" data-filter="creative" aria-pressed="false">3D & creative tech</button>
       </div>
       <div class="project-grid" id="project-grid" aria-live="polite"></div>
@@ -69,7 +79,7 @@
 
     <section class="timeline-section content-section" id="journey" data-title="Journey" aria-labelledby="journey-title">
       <div class="section-head timeline-heading">
-        <p class="eyebrow">02 — The long way around</p>
+        <p class="eyebrow">02 - The long way around</p>
         <div class="section-title-row">
           <h2 id="journey-title">A timeline of<br /><em>making.</em></h2>
           <p class="section-intro">Design, music, software and 3D have never felt like separate lanes. This is the path between them.</p>
@@ -84,7 +94,7 @@
 
     <section class="about-section content-section" id="about" data-title="About" aria-labelledby="about-title">
       <div class="section-head">
-        <p class="eyebrow">03 — How I work</p>
+        <p class="eyebrow">03 - How I work</p>
         <div class="section-title-row">
           <h2 id="about-title">Curious by default.<br /><em>End-to-end.</em></h2>
           <p class="section-intro">I can move from rough idea to a shipped system: explore the problem, shape the experience, build it, debug the difficult parts and learn from what real people use.</p>
@@ -93,14 +103,14 @@
       <div class="principles-grid">
         <article class="principle-card"><span class="principle-num">01</span><h3>Product thinking</h3><p>Start with the user's job. Make the useful path clearer, reduce friction and explain why each feature deserves to exist.</p><span class="principle-tags">Discovery · Flows · Iteration</span></article>
         <article class="principle-card"><span class="principle-num">02</span><h3>Engineering depth</h3><p>Build beyond the mock: frontend, backend, authentication, data flow, deployment and the uncomfortable edge cases.</p><span class="principle-tags">React · Node · Systems</span></article>
-        <article class="principle-card"><span class="principle-num">03</span><h3>Creative technology</h3><p>Use 3D, spatial interfaces, graphics, motion and sound when they improve the experience—not just because they look impressive.</p><span class="principle-tags">Blender · Three.js · Unity</span></article>
+        <article class="principle-card"><span class="principle-num">03</span><h3>Creative technology</h3><p>Use 3D, spatial interfaces, graphics, motion and sound when they improve the experience-not just because they look impressive.</p><span class="principle-tags">Blender · Three.js · Unity</span></article>
       </div>
       <div class="experience-block">
         <div class="experience-heading"><p class="eyebrow">Experience & community</p><p class="small-note">A few contexts that shaped how I build.</p></div>
         <ul class="experience-list">
           <li><div><span class="experience-role">Software Development Engineering Intern</span><span class="experience-place">EZAIX Inc. · Product workflows, desktop software, voice AI</span></div><span class="experience-date">2026</span></li>
-          <li><div><span class="experience-role">Head of 3D Design</span><span class="experience-place">Tinkering Lab, IIT Roorkee · 3D/XR, prototypes, mentoring</span></div><span class="experience-date">2026—</span></li>
-          <li><div><span class="experience-role">Design & Web / Visual Identity</span><span class="experience-place">SPIC MACAY and MeTES, IIT Roorkee</span></div><span class="experience-date">2023—26</span></li>
+          <li><div><span class="experience-role">Head of 3D Design</span><span class="experience-place">Tinkering Lab, IIT Roorkee · 3D/XR, prototypes, mentoring</span></div><span class="experience-date">2026-</span></li>
+          <li><div><span class="experience-role">Design & Web / Visual Identity</span><span class="experience-place">SPIC MACAY and MeTES, IIT Roorkee</span></div><span class="experience-date">2023-26</span></li>
         </ul>
       </div>
       <div class="toolkit-row">
@@ -110,9 +120,9 @@
     </section>
 
     <section class="track contact-section" id="contact" data-title="Contact" aria-labelledby="contact-title">
-      <p class="eyebrow">04 — Over to you</p>
+      <p class="eyebrow">04 - Over to you</p>
       <h2 id="contact-title">Have a good<br /><em>problem?</em></h2>
-      <p class="prose">I'm interested in product design, software engineering and creative technology—especially work where the three overlap.</p>
+      <p class="prose">I'm interested in product design, software engineering and creative technology-especially work where the three overlap.</p>
       <a class="mail" href="mailto:harioms3136@gmail.com">harioms3136@gmail.com</a>
       <div class="contact-actions">
         <button class="copy" type="button" data-copy="harioms3136@gmail.com">Copy email</button>
