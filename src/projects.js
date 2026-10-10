@@ -26,7 +26,7 @@ export const PROJECTS = [
     stack: ['React', 'Express', 'PostgreSQL', 'AWS', 'OAuth', '3D campus map'],
     links: [
       { label: 'Open Campus Dashboard', href: 'https://campus-dashboard.iitr.ac.in/' },
-      { label: 'Open Thomso Event Tracker', href: 'https://campus-dashboard.iitr.ac.in/app/fest/now' }
+      { label: 'Open Thomso Event Tracker', href: 'https://campus-dashboard.iitr.ac.in/app/fest/' }
     ],
     note: 'Built with the Tinkering Lab team at IIT Roorkee. Team-wide decisions and implementation were collaborative; the role listed here reflects my direct contributions.'
   },
@@ -51,7 +51,9 @@ export const PROJECTS = [
     ],
     outcome: 'The team worked on the app for several months and built an early tester community. Development was later paused because both founders could not consistently commit the required time. It was an early-stage product, not a launched, scaled business.',
     stack: ['React Native', 'Figma', 'Mobile UI implementation'],
-    links: [],
+    links: [
+      { label: 'Check out the app on X', href: 'https://x.com/flingbizz' }
+    ],
     note: 'The Figma designs were created by my co-founder. My contribution was primarily mobile development and implementation.'
   },
   {
@@ -74,7 +76,10 @@ export const PROJECTS = [
     ],
     outcome: 'A functioning real-time diagramming MVP deployed with a Vercel frontend and Render backend.',
     stack: ['React', 'TypeScript', 'HTML5 Canvas', 'WebSockets', 'Node.js', 'Express'],
-    links: [], note: 'Add a live demo or short collaboration walkthrough here when ready.'
+    links: [
+      { label: 'Open NodeBoard', href: 'https://real-time-collaborative-diagram-edi.vercel.app/' },
+    ],
+    note: 'Add a live demo or short collaboration walkthrough here when ready.'
   },
   {
     id: 'gta-iitr', number: '04', title: 'GTA-IITR: 3D Campus Simulator',
@@ -141,7 +146,10 @@ export const PROJECTS = [
       'Keep the interface responsive so a quick progress check works on smaller screens.'
     ],
     outcome: 'A personal productivity experiment focused on habit tracking, visual feedback and responsive UI. It should be presented as a project, not as a validated or scaled product.',
-    stack: ['JavaScript', 'HTML/CSS', 'Data visualization', 'Responsive UI'], links: [],
+    stack: ['JavaScript', 'HTML/CSS', 'Data visualization', 'Responsive UI'], 
+    links: [
+      { label: 'Open Hercules Habit Warrior', href: 'https://hariom57.github.io/Hercules-HariOmSharma/',}
+    ],
     note: 'Add a live demo or a short walkthrough when available.'
   },
   {
@@ -161,7 +169,10 @@ export const PROJECTS = [
       'Keep progress feedback visible so the next action feels concrete.'
     ],
     outcome: 'A personal product experiment exploring goal tracking and gamification.',
-    stack: ['JavaScript', 'HTML/CSS', 'Product UI', 'Gamification'], links: [],
+    stack: ['JavaScript', 'HTML/CSS', 'Product UI', 'Gamification'], 
+    links: [
+      { label: 'Open TargetChase', href: 'https://cricket-productivity.vercel.app/' },
+    ],
     note: 'Add a live demo or walkthrough when available.'
   }
 ];
