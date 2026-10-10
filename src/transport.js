@@ -62,8 +62,13 @@ export function createTransport({ tracks, onSeek }) {
   }
 
   function set(p) {
-    progress = p;
-    draw();
+    const next = Math.min(1, Math.max(0, p));
+    if (Math.abs(next - progress) > 0.00005) {
+      progress = next;
+      draw();
+    } else {
+      progress = next;
+    }
     timeNow.textContent = fmt(p * RUNTIME);
     scrub.setAttribute('aria-valuenow', Math.round(p * 100));
     let idx = 0;

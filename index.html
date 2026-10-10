@@ -3,13 +3,19 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Hari Om Sharma</title>
-  <meta name="description" content="Hari Om Sharma — product designer at IIT Roorkee. Interfaces, brand identities and 3D." />
-  <meta name="theme-color" content="#E6E5EE" />
+  <meta name="color-scheme" content="light" />
+  <title>Hari Om Sharma — Product-minded Engineer & Creative Technologist</title>
+  <meta name="description" content="Hari Om Sharma is an IIT Roorkee engineer building user-facing products, interactive 3D experiences, and AI-enabled software." />
+  <meta name="theme-color" content="#e6e5ee" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Hari Om Sharma — Product-minded Engineer & Creative Technologist" />
+  <meta property="og:description" content="Products, interaction design, creative technology, full-stack engineering and AI/ML." />
+  <meta property="og:url" content="https://hari-om-sharma-portfolio.vercel.app/" />
+  <meta name="twitter:card" content="summary" />
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 16 16%27%3E%3Cg fill=%27%23191b3a%27%3E%3Crect x=%271%27 y=%276%27 width=%272%27 height=%274%27/%3E%3Crect x=%275%27 y=%272%27 width=%272%27 height=%2712%27/%3E%3Crect x=%279%27 y=%274%27 width=%272%27 height=%278%27/%3E%3Crect x=%2713%27 y=%277%27 width=%272%27 height=%272%27/%3E%3C/g%3E%3C/svg%3E" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Anybody:wdth,wght@50..150,300..900&family=Hanken+Grotesk:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Anybody:wdth,wght@50..150,300..900&family=Hanken+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="/src/style.css" />
 </head>
 <body>
@@ -17,40 +23,113 @@
   <div class="veil" aria-hidden="true"></div>
 
   <header class="top">
-    <a class="top-name" href="#intro">Hari Om Sharma</a>
-    <a class="top-mail" href="mailto:harioms3136@gmail.com">Email me</a>
+    <a class="top-name" href="#intro" aria-label="Hari Om Sharma, home">Hari Om Sharma<span class="top-mark">®</span></a>
+    <nav class="top-nav" aria-label="Main navigation">
+      <a href="#work">Work <span>06</span></a>
+      <a href="#journey">Journey</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+    </nav>
   </header>
 
   <main>
-    <section class="track" id="intro" data-title="Intro">
-      <h1 class="name" aria-label="Hari Om Sharma">
+    <section class="track hero" id="intro" data-title="Intro" aria-labelledby="hero-title">
+      <p class="eyebrow hero-eyebrow"><span class="status-dot"></span> IIT Roorkee · Engineer by training, builder by instinct</p>
+      <h1 class="name" id="hero-title" aria-label="Hari Om Sharma">
         <span class="name-line" data-split>Hari Om</span>
-        <span class="name-line" data-split>Sharma</span>
+        <span class="name-line" data-split>Sharma<span class="name-period">.</span></span>
       </h1>
-      <p class="lede">Product Designer studying Engineering at IIT Roorkee, who loves to build. I spend the rest of my time tinkering in Blender, Figma and doing Music. </p>
-      <p class="lede">A product-minded engineer and creative technologist who builds user-facing experiences, combines design with engineering, and can take a product from an idea to a deployed system.</p>
-      <p class="hint">Scroll to play</p>
+      <p class="lede">I build useful things, beautifully.</p>
+      <p class="hero-copy">Product-minded engineer and creative technologist working across user experience, full-stack software, AI/ML and 3D worlds.</p>
+      <div class="hero-actions">
+        <a class="button button-dark" href="#work">Explore selected work <span aria-hidden="true">↘</span></a>
+        <a class="text-link" href="#about">A little about me <span aria-hidden="true">→</span></a>
+      </div>
+      <p class="hint"><span class="hint-line" aria-hidden="true"></span> Scroll to move through the waveform</p>
+      <p class="hero-index">01 / 04 <span>PRODUCT · CODE · CREATIVE</span></p>
     </section>
 
-    <section class="timeline" id="timeline" aria-labelledby="tl-title">
-      <h2 id="tl-title" class="sr-only">Timeline</h2>
-      <ol class="events"></ol>
+    <section class="work-section content-section" id="work" data-title="Selected work" aria-labelledby="work-title">
+      <div class="section-head">
+        <p class="eyebrow">01 — Selected work</p>
+        <div class="section-title-row">
+          <h2 id="work-title">Ideas made<br /><em>real.</em></h2>
+          <p class="section-intro">A selection of products, experiments and creative experiences. I like working where user needs, visual craft and engineering meet.</p>
+        </div>
+      </div>
+      <div class="filter-bar" role="group" aria-label="Filter projects">
+        <button class="filter-chip is-active" type="button" data-filter="all" aria-pressed="true">All work <span>06</span></button>
+        <button class="filter-chip" type="button" data-filter="product" aria-pressed="false">Product & UI</button>
+        <button class="filter-chip" type="button" data-filter="engineering" aria-pressed="false">Engineering / AI</button>
+        <button class="filter-chip" type="button" data-filter="creative" aria-pressed="false">3D & creative tech</button>
+      </div>
+      <div class="project-grid" id="project-grid" aria-live="polite"></div>
+      <p class="section-footnote">The case studies describe my contribution honestly, including collaborative work and projects that were paused or remain experiments.</p>
     </section>
 
-    <section class="track" id="contact" data-title="Contact">
-      <h2>Let's make something</h2>
-      <p class="prose">Open to internships, freelance identity work and anything that mixes design with sound.</p>
+    <section class="timeline-section content-section" id="journey" data-title="Journey" aria-labelledby="journey-title">
+      <div class="section-head timeline-heading">
+        <p class="eyebrow">02 — The long way around</p>
+        <div class="section-title-row">
+          <h2 id="journey-title">A timeline of<br /><em>making.</em></h2>
+          <p class="section-intro">Design, music, software and 3D have never felt like separate lanes. This is the path between them.</p>
+        </div>
+      </div>
+      <div class="timeline" id="timeline" aria-labelledby="timeline-list-title">
+        <h3 id="timeline-list-title" class="sr-only">Milestones</h3>
+        <ol class="events"></ol>
+      </div>
+      <p class="timeline-caption"><span>SCROLL POSITION</span> changes the camera, playhead and current milestone. Sound is optional.</p>
+    </section>
+
+    <section class="about-section content-section" id="about" data-title="About" aria-labelledby="about-title">
+      <div class="section-head">
+        <p class="eyebrow">03 — How I work</p>
+        <div class="section-title-row">
+          <h2 id="about-title">Curious by default.<br /><em>End-to-end.</em></h2>
+          <p class="section-intro">I can move from rough idea to a shipped system: explore the problem, shape the experience, build it, debug the difficult parts and learn from what real people use.</p>
+        </div>
+      </div>
+      <div class="principles-grid">
+        <article class="principle-card"><span class="principle-num">01</span><h3>Product thinking</h3><p>Start with the user's job. Make the useful path clearer, reduce friction and explain why each feature deserves to exist.</p><span class="principle-tags">Discovery · Flows · Iteration</span></article>
+        <article class="principle-card"><span class="principle-num">02</span><h3>Engineering depth</h3><p>Build beyond the mock: frontend, backend, authentication, data flow, deployment and the uncomfortable edge cases.</p><span class="principle-tags">React · Node · Systems</span></article>
+        <article class="principle-card"><span class="principle-num">03</span><h3>Creative technology</h3><p>Use 3D, spatial interfaces, graphics, motion and sound when they improve the experience—not just because they look impressive.</p><span class="principle-tags">Blender · Three.js · Unity</span></article>
+      </div>
+      <div class="experience-block">
+        <div class="experience-heading"><p class="eyebrow">Experience & community</p><p class="small-note">A few contexts that shaped how I build.</p></div>
+        <ul class="experience-list">
+          <li><div><span class="experience-role">Software Development Engineering Intern</span><span class="experience-place">EZAIX Inc. · Product workflows, desktop software, voice AI</span></div><span class="experience-date">2026</span></li>
+          <li><div><span class="experience-role">Head of 3D Design</span><span class="experience-place">Tinkering Lab, IIT Roorkee · 3D/XR, prototypes, mentoring</span></div><span class="experience-date">2026—</span></li>
+          <li><div><span class="experience-role">Design & Web / Visual Identity</span><span class="experience-place">SPIC MACAY and MeTES, IIT Roorkee</span></div><span class="experience-date">2023—26</span></li>
+        </ul>
+      </div>
+      <div class="toolkit-row">
+        <span class="eyebrow">Toolkit</span>
+        <p>Figma · Blender · Unity · Unreal Engine · Three.js · React · TypeScript · Node.js · PostgreSQL · Python · AI/ML · LLM integrations</p>
+      </div>
+    </section>
+
+    <section class="track contact-section" id="contact" data-title="Contact" aria-labelledby="contact-title">
+      <p class="eyebrow">04 — Over to you</p>
+      <h2 id="contact-title">Have a good<br /><em>problem?</em></h2>
+      <p class="prose">I'm interested in product design, software engineering and creative technology—especially work where the three overlap.</p>
       <a class="mail" href="mailto:harioms3136@gmail.com">harioms3136@gmail.com</a>
       <div class="contact-actions">
         <button class="copy" type="button" data-copy="harioms3136@gmail.com">Copy email</button>
-        <a href="https://www.linkedin.com/in/hari-om-sharma" target="_blank" rel="noopener">LinkedIn</a>
-        <a href="https://www.instagram.com/hariom_sharma_005/" target="_blank" rel="noopener">Instagram</a>
+        <a href="https://www.linkedin.com/in/hari-om-sharma" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a>
+        <a href="https://www.instagram.com/hariom_sharma_005/" target="_blank" rel="noopener noreferrer">Instagram ↗</a>
       </div>
-      <p class="foot">Roorkee, India</p>
+      <p class="foot">Roorkee, India <span>·</span> Built with curiosity, code and a slightly unreasonable love for details.</p>
+      <a class="back-top" href="#intro">Back to top ↑</a>
     </section>
   </main>
 
-  <nav class="transport" aria-label="Sections">
+  <dialog class="case-dialog" id="project-dialog" aria-labelledby="case-title">
+    <button class="dialog-close" type="button" aria-label="Close case study">Close <span aria-hidden="true">×</span></button>
+    <div class="case-content" id="case-content"></div>
+  </dialog>
+
+  <nav class="transport" aria-label="Page journey controls">
     <button class="sound" type="button" aria-pressed="false">Sound off</button>
     <p class="now" aria-live="polite"><span class="now-num">1</span><span class="now-title">Intro</span></p>
     <div class="scrub" role="slider" tabindex="0" aria-label="Page position" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">

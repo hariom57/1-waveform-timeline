@@ -1,48 +1,53 @@
 import * as THREE from 'three';
 
-// His story, in order. Each entry becomes a marker spike on the waveform.
-// `when` is left empty where the CV gives no date.
+// Timeline content is intentionally hand-authored: it is a story, not a date-sorted CV.
+// Keep the chapter order aligned with the transport's score progression.
 export const EVENTS = [
-  { chapter: 'School', when: '2008 – 2021', title: "St. Paul's School", detail: "St. Paul's Sr. Sec. School, Udaipur. Class X, 95.8%." },
-  { chapter: 'School', when: '2021 – 2023', title: 'MDS Public School', detail: 'Udaipur. Class XII, 92.4%.' },
-  { chapter: 'IIT Roorkee', when: '2023', title: 'IIT Roorkee', detail: 'Started a B.Tech. SGPA 9.33.' },
-  { chapter: 'IIT Roorkee', when: '2023', title: 'Music Section', detail: 'Member, 2023 to now.' },
-  { chapter: 'IIT Roorkee', when: '2023', title: 'MeTES', detail: 'Executive Member of the Metallurgical Engineering Society, 2023 to now.' },
-  { chapter: 'IIT Roorkee', when: '2023 – 2024', title: 'SPIC MACAY IITR', detail: 'Design and web development.' },
-  { chapter: 'IIT Roorkee', when: 'Oct 2023', title: 'NSS WaSH Cell', detail: 'Volunteer until April 2024.' },
-  { chapter: 'IIT Roorkee', when: '2023', title: 'Backdoors CTF', detail: 'Ranked 218.' },
-  { chapter: 'IIT Roorkee', when: '2023', title: 'Mr. Freshers', detail: 'Finalist.' },
-  { chapter: 'IIT Roorkee', when: '2023 – 2024', title: 'POS Inter-Bhawan GC', detail: '2nd runner-up.' },
-  { chapter: 'Leading', when: '2024', title: 'Tinkering Lab', detail: 'Project Lead, Design. 2024 to now.' },
-  { chapter: 'Leading', when: '2024', title: 'Mr. Rajasthan', detail: 'Won Mr. Rajasthan 2024.' },
-  { chapter: 'Competing', when: '2025', title: 'Codeforces Round 1017', detail: 'Global rank 398 in Div. 4. Pupil, max rating 1347.' },
-  { chapter: 'Competing', when: '2025', title: 'Shrishti', detail: 'Best Presentation.' },
-  { chapter: 'Competing', when: '2025', title: 'MPL cricket', detail: 'Won the tournament.' },
-  { chapter: 'Competing', when: '', title: 'MetES Hackathon', detail: '2nd runner-up, ML track.' },
-  { chapter: 'Now', when: 'Now', title: 'Selected work', detail: 'Logo design, monograms, branding and experimental 3D, made in Figma, Framer, Blender and Canva. Case studies are on the way.' },
-  { chapter: 'Now', when: '2027', title: 'Graduating', detail: 'B.Tech, IIT Roorkee.' },
+  { chapter: 'Origins', when: '2021', title: "St. Paul's School", detail: 'Udaipur · Class X, 95.8%.' },
+  { chapter: 'Origins', when: '2021–2023', title: 'MDS Public School', detail: 'Udaipur · Class XII, 92.4%.' },
+  { chapter: 'Origins', when: '2023', title: 'IIT Roorkee', detail: 'Started a B.Tech. in Metallurgical & Materials Engineering.' },
+  { chapter: 'Design', when: '2023–2024', title: 'SPIC MACAY', detail: 'Worked across website UI, event visuals, newsletters and social creatives.' },
+  { chapter: 'Design', when: '2023–2026', title: 'MeTES', detail: 'Departmental website, posters, merchandise and event communication.' },
+  { chapter: 'Creative Tech', when: '2025', title: 'GTA-IITR', detail: 'Pitched a campus-exploration game and created Blender assets for Unity.' },
+  { chapter: 'Creative Tech', when: '2025', title: 'Redemption VR', detail: 'Designed and prepared 3D assets for a zombie-survival VR experience.' },
+  { chapter: 'Creative Tech', when: '2025', title: 'Shrishti', detail: 'The GTA-IITR / VR showcase received Best Presentation recognition.' },
+  { chapter: 'Products', when: '2025–2026', title: 'FlingBizz', detail: 'Built a React Native app from Figma designs; an early-stage product tested by a 100+ member community.' },
+  { chapter: 'Products', when: '2026', title: 'Campus Dashboard', detail: 'Built a campus event experience that grew beyond 1,000 unique visitors.' },
+  { chapter: 'Products', when: '2026', title: 'Thomso tracker', detail: 'Added a 3D campus map, venue navigation, event planning and a crowd heatmap.' },
+  { chapter: 'Products', when: '2026', title: 'NodeBoard', detail: 'Built a real-time collaborative diagram editor using React, TypeScript and WebSockets.' },
+  { chapter: 'Products', when: '2026', title: 'EZAIX', detail: 'Software engineering internship across desktop workflows, backend systems and voice AI.' },
 ];
 
-export const SPIKE = 1.3; // marker bars are this many times the base height
+export const SPIKE = 1.3;
 
 export function createTimeline(list) {
   const items = EVENTS.map((e) => {
     const li = document.createElement('li');
     li.className = 'ev';
-    li.innerHTML = `
-      <div class="ev-label">
-        ${e.when ? `<p class="ev-when">${e.when}</p>` : ''}
-        <h3 class="ev-title">${e.title}</h3>
-        <p class="ev-detail">${e.detail}</p>
-      </div>
-      <span class="ev-stem" aria-hidden="true"></span>`;
+    const label = document.createElement('div');
+    label.className = 'ev-label';
+    if (e.when) {
+      const when = document.createElement('p');
+      when.className = 'ev-when';
+      when.textContent = e.when;
+      label.append(when);
+    }
+    const title = document.createElement('h3');
+    title.className = 'ev-title';
+    title.textContent = e.title;
+    const detail = document.createElement('p');
+    detail.className = 'ev-detail';
+    detail.textContent = e.detail;
+    label.append(title, detail);
+    const stem = document.createElement('span');
+    stem.className = 'ev-stem';
+    stem.setAttribute('aria-hidden', 'true');
+    li.append(label, stem);
     list.append(li);
     return { ...e, el: li, u: 0, p: 0, tip: new THREE.Vector3(), state: '' };
   });
 
   const v = new THREE.Vector3();
-
-  // place events evenly through the timeline's scroll range
   function layout(pStart, pEnd, toU) {
     const n = items.length;
     items.forEach((it, i) => {
@@ -57,7 +62,6 @@ export function createTimeline(list) {
   }
 
   function update(p, spacing, camera, w, h, fogNear, fogFar) {
-    // the moment the playhead most recently reached stays current until the next one
     let nearest = -1;
     items.forEach((it, i) => { if (p >= it.p - spacing * 0.3) nearest = i; });
     if (nearest >= 0 && p > items[nearest].p + spacing) nearest = -1;
@@ -71,7 +75,6 @@ export function createTimeline(list) {
       const y = ((1 - v.y) / 2) * h;
       it.el.style.transform = `translate3d(${x.toFixed(1)}px, ${y.toFixed(1)}px, 0)`;
       it.el.style.opacity = onScreen ? fade.toFixed(3) : '0';
-      // keep the label on screen; the stem stays on its spike
       if (onScreen && fade > 0.01) {
         const lw = it.el.firstElementChild.offsetWidth;
         const shift = Math.max(16 - x, Math.min(0, w - 16 - (x + lw)));

@@ -7,7 +7,8 @@ const CHORDS = [
   [52, 59, 62, 66, 67], // Em9     iit roorkee
   [43, 50, 54, 57, 61], // Gmaj7#11 leading
   [40, 47, 50, 54, 55], // Em9     competing
-  [45, 52, 54, 57, 59], // A6/9    now
+  [45, 52, 54, 57, 59], // A6/9    products
+  [43, 50, 54, 57, 61], // Gmaj7#11 about
   [50, 57, 62, 64, 69], // Dadd9   contact
 ];
 const mtof = (m) => 440 * Math.pow(2, (m - 69) / 12);
@@ -83,8 +84,12 @@ export function createSound() {
 
   return {
     get on() { return on; },
+    get available() { return Boolean(window.AudioContext || window.webkitAudioContext); },
     toggle() {
-      if (!ctx) build();
+      if (!this.available) return false;
+      if (!ctx) {
+        try { build(); } catch { return false; }
+      }
       on = !on;
       const t = ctx.currentTime;
       master.gain.cancelScheduledValues(t);
