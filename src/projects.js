@@ -9,6 +9,7 @@ export const PROJECTS = [
     metric: '1,000+ unique visitors',
     role: 'Product research and design, 3D map, architecture, frontend and backend engineering',
     status: 'Live product',
+    image: new URL('../assets/campus-dashboard.jpg', import.meta.url).href,
     cover: `<svg viewBox="0 0 680 420" role="img" aria-label="Illustration of the Thomso event tracker and campus map"><defs><pattern id="cd-grid" width="28" height="28" patternUnits="userSpaceOnUse"><path d="M28 0H0V28" fill="none" stroke="#aab7d7" stroke-width="1"/></pattern></defs><rect width="680" height="420" rx="22" fill="#f3f2ed"/><rect width="680" height="420" rx="22" fill="url(#cd-grid)"/><path d="M-10 310 C130 260 135 165 260 205 S430 340 700 80" fill="none" stroke="#ffcf31" stroke-width="34" stroke-linecap="round"/><path d="M-10 310 C130 260 135 165 260 205 S430 340 700 80" fill="none" stroke="#242b8c" stroke-width="4" stroke-dasharray="7 10"/><g fill="#1d2b92" stroke="#fff" stroke-width="7"><circle cx="124" cy="266" r="15"/><circle cx="260" cy="205" r="15"/><circle cx="414" cy="277" r="15"/><circle cx="560" cy="172" r="15"/></g><rect x="44" y="40" width="244" height="116" rx="14" fill="#fff" stroke="#d4d5df"/><text x="66" y="72" font-size="14" fill="#6a6b82" font-family="Arial">THOMSO / EVENT TRACKER</text><text x="66" y="102" font-size="26" font-weight="700" fill="#1b214d" font-family="Arial">Find your next</text><text x="66" y="130" font-size="26" font-weight="700" fill="#1b214d" font-family="Arial">moment.</text><rect x="388" y="30" width="240" height="96" rx="14" fill="#202b91"/><text x="410" y="61" font-size="13" fill="#cbd3ff" font-family="Arial">YOUR PLAN</text><text x="410" y="91" font-size="21" font-weight="700" fill="#fff" font-family="Arial">4 saved events</text><circle cx="594" cy="90" r="13" fill="#ffcf31"/></svg>`,
     problem: 'During Thomso, many performances, competitions and activities happen across campus. A schedule says what and when, but visitors still need to find each venue and decide how to move between events.',
     approach: [
@@ -89,6 +90,7 @@ export const PROJECTS = [
     metric: 'Best Presentation, Shrishti 2025',
     role: 'Game ideation and pitching, Blender modeling, environment design and showcase presentation',
     status: 'Team showcase project',
+    image: new URL('../assets/gta-iitr.jpg', import.meta.url).href,
     cover: `<svg viewBox="0 0 680 420" role="img" aria-label="Stylized 3D campus environment illustration"><rect width="680" height="420" rx="22" fill="#20234f"/><circle cx="530" cy="86" r="48" fill="#ffcf39"/><path d="M0 292L140 198L242 258L345 154L470 252L580 176L680 234V420H0Z" fill="#323977"/><path d="M0 338L170 270L305 318L457 250L680 310V420H0Z" fill="#4b5791"/><g stroke="#a8b5ef" stroke-width="2"><path d="M70 353V270H130V353M140 353V238H210V353M230 353V284H289V353M410 351V246H462V351M480 351V280H545V351" fill="#e8e9f7"/><path d="M82 285H118M82 304H118M82 323H118M151 257H199M151 277H199M151 297H199M151 317H199M420 266H452M420 286H452M420 306H452M493 298H531M493 318H531"/></g><path d="M0 365L170 333L335 366L470 332L680 365" fill="none" stroke="#ffcf39" stroke-width="7"/><text x="38" y="52" fill="#c9d0ff" font-family="Arial" font-size="16" letter-spacing="4">WORLD BUILDING / 3D</text><text x="38" y="91" fill="#fff" font-family="Arial" font-size="30" font-weight="700">Explore IIT Roorkee.</text></svg>`,
     problem: 'The concept explored how an interactive game could turn the real IIT Roorkee campus into an explorable world with familiar locations and missions.',
     approach: [
@@ -101,7 +103,10 @@ export const PROJECTS = [
       'Treat the environment as part of the player experience, not just a collection of standalone models.'
     ],
     outcome: 'The team received the Best Presentation Award at Shrishti 2025. My contribution centered on the concept, pitching, 3D environment work and presentation.',
-    stack: ['Blender', 'Unity', '3D modeling', 'Environment design'], links: [],
+    stack: ['Blender', 'Unity', '3D modeling', 'Environment design'], 
+    links: [
+      { label: 'Check out the BTS', href: 'https://drive.google.com/drive/folders/1Dk-XF6P8djBbphn8T7OpgNkTPuRJ-9xg?usp=drive_link' }
+    ],
     note: 'This was a team project. The description focuses on my own design and 3D contributions.'
   },
   {
@@ -112,6 +117,7 @@ export const PROJECTS = [
     metric: 'Best Presentation, Shrishti 2025',
     role: '3D asset design, Unity-ready asset preparation and showcase presentation',
     status: 'Team showcase project',
+    image: new URL('../assets/redemption-vr.jpg', import.meta.url).href,
     cover: `<svg viewBox="0 0 680 420" role="img" aria-label="Atmospheric zombie survival game environment illustration"><rect width="680" height="420" rx="22" fill="#171c31"/><circle cx="520" cy="86" r="45" fill="#cad1b2" opacity=".86"/><path d="M0 240L120 170L210 222L342 110L455 216L565 146L680 212V420H0Z" fill="#29394a"/><path d="M0 302L140 251L242 292L390 236L510 286L680 239V420H0Z" fill="#344b4a"/><g fill="#b6c4b3" stroke="#151a2e" stroke-width="5"><path d="M82 342V217H166V342Z"/><path d="M178 342V193H247V342Z"/><path d="M427 342V207H493V342Z"/><path d="M505 342V245H590V342Z"/></g><g fill="#ffcf39"><rect x="100" y="246" width="12" height="18"/><rect x="135" y="246" width="12" height="18"/><rect x="196" y="219" width="12" height="18"/><rect x="456" y="236" width="12" height="18"/><rect x="536" y="269" width="12" height="18"/></g><path d="M0 382L150 349L322 386L492 348L680 380" fill="none" stroke="#ffcf39" stroke-width="5" opacity=".8"/><text x="36" y="54" fill="#c9d0ff" font-family="Arial" font-size="15" letter-spacing="4">IMMERSIVE GAME DESIGN</text><text x="36" y="94" fill="#fff" font-family="Arial" font-size="32" font-weight="700">Redemption VR</text></svg>`,
     problem: 'The project needed convincing 3D assets that could support the atmosphere of an immersive zombie-survival game while still being practical to use in Unity.',
     approach: [
@@ -124,7 +130,10 @@ export const PROJECTS = [
       'Use environment and asset choices to support the mood of the game.'
     ],
     outcome: 'The team received the Best Presentation Award at Shrishti 2025. My main contribution was 3D asset design and support for the showcase.',
-    stack: ['Blender', 'Unity', '3D asset design', 'VR'], links: [],
+    stack: ['Blender', 'Unity', '3D asset design', 'VR'], 
+    links: [
+      { label: 'Check out the BTS', href: 'https://drive.google.com/drive/folders/1lpuXCafSB28GT7g0FpUusvncbb-UFmQe?usp=drive_link' }
+    ],
     note: 'This was a collaborative team project. Performance improvements should only be quantified if measurements are available.'
   },
   {
@@ -185,14 +194,45 @@ const create = (tag, className, text) => {
 };
 
 let coverInstance = 0;
+// function buildCover(project) {
+//   const cover = create('div', `project-cover cover-${project.id}`);
+//   const instance = `${project.id}-${++coverInstance}`;
+//   cover.innerHTML = project.cover
+//     .replaceAll('id="cd-grid"', `id="cd-grid-${instance}"`)
+//     .replaceAll('url(#cd-grid)', `url(#cd-grid-${instance})`)
+//     .replaceAll('id="nb-dots"', `id="nb-dots-${instance}"`)
+//     .replaceAll('url(#nb-dots)', `url(#nb-dots-${instance})`);
+//   return cover;
+// }
 function buildCover(project) {
   const cover = create('div', `project-cover cover-${project.id}`);
   const instance = `${project.id}-${++coverInstance}`;
-  cover.innerHTML = project.cover
+
+  const fallbackSvg = project.cover
     .replaceAll('id="cd-grid"', `id="cd-grid-${instance}"`)
     .replaceAll('url(#cd-grid)', `url(#cd-grid-${instance})`)
     .replaceAll('id="nb-dots"', `id="nb-dots-${instance}"`)
     .replaceAll('url(#nb-dots)', `url(#nb-dots-${instance})`);
+
+  const showFallback = () => {
+    cover.innerHTML = fallbackSvg;
+  };
+
+  if (!project.image) {
+    showFallback();
+    return cover;
+  }
+
+  const img = document.createElement('img');
+  img.className = 'project-cover-image';
+  img.alt = `${project.title} preview`;
+  img.loading = 'lazy';
+  img.decoding = 'async';
+
+  img.addEventListener('error', showFallback, { once: true });
+  img.src = project.image;
+  cover.append(img);
+
   return cover;
 }
 
